@@ -1,0 +1,60 @@
+5mal
+1 Abfrage
+---------
+1. 01.14 min
+2. 01.13 min
+3. 01.08 min
+4. 01.09 min
+5. 01.08 min
+
+2 Abfrage 
+---------
+1. 01.12 min
+2. 01.12 min
+3. 01.11 min
+4. 01.12 min
+5. 01.12 min
+
+3 Abfrage 
+---------
+1. 0.03 min
+2. 0.03 min
+3. 0.03 min
+4. 0.03 min
+5. 0.03 min
+
+4  Abfrage
+---------
+1. 00.01 min
+2. 00.01 min
+3. 00.01 min
+4. 00.01 min
+5. 00.01 min
+
+5 Abfrage
+---------
+1.
+2.
+3.
+4.
+5.
+
+
+3 Abfrage 
+
+  SELECT AVG (cast (Lieferdienst.Preis as bigint)) AS AVGLief, AVG (cast(Bestellung.Preis as bigint)) AS AVGBestell, AVG (cast (Standorte.Mitarbeiteranzahl as bigint)) AS AVGMit 
+ FROM Lieferdienst, Bestellung, Standorte
+ WHERE Standorte.Liefernr = Lieferdienst.Liefernr AND Bestellung.Bestellnr = Lieferdienst.Bestellnr
+ GROUP BY Lieferdienst.Preis;
+4. Abfrage 
+
+ --summe Fuhrparkgröße der bestellungen vom "bestimmtes datum"
+ SELECT sum(cast(s.Fuhrparkgröße as bigint)) AS SummeFuhrparkgröße, b.Datum
+ FROM Bestellung b , Standorte s
+ Where b.Datum = '08.07.2003'
+ GROUP BY Datum 
+
+5. Abfrage
+Select AVG (RabatKunde) AS DurchschnittlicherRabattKunde, k.Name, l.Liefernr
+ FROM Lieferdienst l , Kunden k Join Bestellung b ON (k.Kunnr = b.Kunnr) 
+ Group By k.Name, l.Liefernr
