@@ -88,8 +88,8 @@ Fehler: System.OutOfMemoryException -> Ms max 2g Ergebnis Speicher
  GROUP BY Lieferdienst.Preis;
 4. Abfrage 
 
- --summe Fuhrparkgröße der bestellungen vom "bestimmtes datum"
- SELECT sum(cast(s.Fuhrparkgröße as bigint)) AS SummeFuhrparkgröße, b.Datum
+ --summe FuhrparkgrÃ¶ÃŸe der bestellungen vom "bestimmtes datum"
+ SELECT sum(cast(s.FuhrparkgrÃ¶ÃŸe as bigint)) AS SummeFuhrparkgrÃ¶ÃŸe, b.Datum
  FROM Bestellung b , Standorte s
  Where b.Datum = '08.07.2003'
  GROUP BY Datum 
@@ -111,3 +111,10 @@ FROM Bestellung
 WHERE Bestellnr IN (SELECT Bestellnr FROM Bestellung)
 GROUP BY Bestellnr
 ORDER BY Rechnung desc;
+
+
+3.1.
+SELECT AVG (cast (a."Preis" as bigint))/(SELECT SUM(cast("Preis" as bigint)) FROM "XSA_ADMIN"."Bestellung") * (SELECT AVG(cast("Preis" as bigint)) FROM "XSA_ADMIN"."Bestellung")   AS AVGLief, AVG (cast(b."Preis" as bigint)) AS AVGBestell, AVG (cast (c."Mitarbeiteranzahl" as bigint)) AS AVGMit 
+ FROM "XSA_ADMIN"."Lieferdienst" a, "XSA_ADMIN"."Bestellung" b, "XSA_ADMIN"."Standorte" c
+ WHERE c."Liefernr" = a."Liefernr" AND b."Bestellnr" = a."Bestellnr"
+GROUP BY a."Preis"
