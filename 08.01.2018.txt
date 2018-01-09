@@ -71,6 +71,15 @@ Fehler: System.OutOfMemoryException -> Ms max 2g Ergebnis Speicher
 9. CPU-Zeit = 26719 ms, verstrichene Zeit = 3626 ms.
 10. CPU-Zeit = 26295 ms, verstrichene Zeit = 3740 ms.
 
+7 Abfrage
+---------
+1. CPU-Zeit = 18503 ms, verstrichene Zeit = 37229 ms.
+
+
+
+
+
+
 3 Abfrage 
 
   SELECT AVG (cast (Lieferdienst.Preis as bigint)) AS AVGLief, AVG (cast(Bestellung.Preis as bigint)) AS AVGBestell, AVG (cast (Standorte.Mitarbeiteranzahl as bigint)) AS AVGMit 
@@ -95,3 +104,10 @@ Select AVG (cast (l.Bestellnr as bigint)) As AVGBestellProLief, l.Unternehmen
 FROM Bestellung b 
 JOIN Lieferdienst l ON(b.Bestellnr = l.Bestellnr)
 Group BY l.Unternehmen 
+
+7. Abfrage
+SELECT Bestellnr ,SUM(cast (BetragGesamt as bigint))AS SummeBetragGesamt,(SELECT SUM(MaxLieferMenge) FROM Lieferdienst) AS Rechnung 
+FROM Bestellung
+WHERE Bestellnr IN (SELECT Bestellnr FROM Bestellung)
+GROUP BY Bestellnr
+ORDER BY Rechnung desc;
