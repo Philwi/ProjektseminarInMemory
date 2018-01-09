@@ -1,44 +1,75 @@
 5mal
+
+SET STATISTICS TIME ON
+
 1 Abfrage
 ---------
-1. 01.14 min
-2. 01.13 min
-3. 01.08 min
-4. 01.09 min
-5. 01.08 min
+1. CPU-Zeit = 101544 ms, verstrichene Zeit = 69240 ms.
+2. CPU-Zeit = 100796 ms, verstrichene Zeit = 68729 ms.
+3. CPU-Zeit = 101834 ms, verstrichene Zeit = 68807 ms.
+4. CPU-Zeit = 101072 ms, verstrichene Zeit = 69056 ms.
+5. CPU-Zeit = 101390 ms, verstrichene Zeit = 68614 ms.
+6. CPU-Zeit = 101421 ms, verstrichene Zeit = 68811 ms.
+7. CPU-Zeit = 100220 ms, verstrichene Zeit = 68863 ms.
+8. CPU-Zeit = 102887 ms, verstrichene Zeit = 70735 ms.
+9. CPU-Zeit = 101925 ms, verstrichene Zeit = 71138 ms.
+10. CPU-Zeit = 101012 ms, verstrichene Zeit = 69515 ms.
 
 2 Abfrage 
 ---------
-1. 01.12 min
-2. 01.12 min
-3. 01.11 min
-4. 01.12 min
-5. 01.12 min
+1. CPU-Zeit = 105160 ms, verstrichene Zeit = 72939 ms.
+2. CPU-Zeit = 104731 ms, verstrichene Zeit = 72100 ms.
+3. CPU-Zeit = 104735 ms, verstrichene Zeit = 72196 ms.
+4. CPU-Zeit = 105530 ms, verstrichene Zeit = 72799 ms.
+5. CPU-Zeit = 103717 ms, verstrichene Zeit = 72164 ms.
+6. CPU-Zeit = 103454 ms, verstrichene Zeit = 73994 ms.
+7. CPU-Zeit = 105891 ms, verstrichene Zeit = 71738 ms.
+8. CPU-Zeit = 104421 ms, verstrichene Zeit = 73284 ms.
+9. CPU-Zeit = 105205 ms, verstrichene Zeit = 72288 ms.
+10. CPU-Zeit = 105125 ms, verstrichene Zeit = 71577 ms.
 
 3 Abfrage 
 ---------
-1. 0.03 min
-2. 0.03 min
-3. 0.03 min
-4. 0.03 min
-5. 0.03 min
+1. CPU-Zeit = 30468 ms, verstrichene Zeit = 3945 ms.
+2. CPU-Zeit = 30200 ms, verstrichene Zeit = 3935 ms.
+3. CPU-Zeit = 30221 ms, verstrichene Zeit = 3965 ms.
+4. CPU-Zeit = 30452 ms, verstrichene Zeit = 3923 ms.
+5. CPU-Zeit = 30331 ms, verstrichene Zeit = 3907 ms.
+6. CPU-Zeit = 30595 ms, verstrichene Zeit = 4055 ms.
+7. CPU-Zeit = 30968 ms, verstrichene Zeit = 4043 ms.
+8. CPU-Zeit = 30921 ms, verstrichene Zeit = 4599 ms.
+9. CPU-Zeit = 30909 ms, verstrichene Zeit = 4558 ms.
+10. CPU-Zeit = 30167 ms, verstrichene Zeit = 3927 ms.
 
 4  Abfrage
 ---------
-1. 00.01 min
-2. 00.01 min
-3. 00.01 min
-4. 00.01 min
-5. 00.01 min
+1. CPU-Zeit = 2765 ms, verstrichene Zeit = 1246 ms.
+2. CPU-Zeit = 2609 ms, verstrichene Zeit = 1193 ms.
+3. CPU-Zeit = 2625 ms, verstrichene Zeit = 1195 ms.
+4. CPU-Zeit = 2641 ms, verstrichene Zeit = 1219 ms.
+5. CPU-Zeit = 2609 ms, verstrichene Zeit = 1186 ms.
+6. CPU-Zeit = 2610 ms, verstrichene Zeit = 1248 ms.
+7. CPU-Zeit = 2561 ms, verstrichene Zeit = 1191 ms.
+8. CPU-Zeit = 2608 ms, verstrichene Zeit = 1189 ms.
+9. CPU-Zeit = 2517 ms, verstrichene Zeit = 1204 ms.
+10. CPU-Zeit = 2500 ms, verstrichene Zeit = 1190 ms.
 
 5 Abfrage
 ---------
-1.
-2.
-3.
-4.
-5.
+Fehler: System.OutOfMemoryException -> Ms max 2g Ergebnis Speicher
 
+6 Abfrage
+---------
+1. CPU-Zeit = 27049 ms, verstrichene Zeit = 3650 ms.
+2. CPU-Zeit = 26685 ms, verstrichene Zeit = 3641 ms.
+3. CPU-Zeit = 26549 ms, verstrichene Zeit = 3643 ms.
+4. CPU-Zeit = 26810 ms, verstrichene Zeit = 3638 ms.
+5. CPU-Zeit = 26690 ms, verstrichene Zeit = 3651 ms.
+6. CPU-Zeit = 26966 ms, verstrichene Zeit = 3703 ms.
+7. CPU-Zeit = 26815 ms, verstrichene Zeit = 3647 ms.
+8. CPU-Zeit = 26391 ms, verstrichene Zeit = 3678 ms.
+9. CPU-Zeit = 26719 ms, verstrichene Zeit = 3626 ms.
+10. CPU-Zeit = 26295 ms, verstrichene Zeit = 3740 ms.
 
 3 Abfrage 
 
@@ -58,3 +89,9 @@
 Select AVG (RabatKunde) AS DurchschnittlicherRabattKunde, k.Name, l.Liefernr
  FROM Lieferdienst l , Kunden k Join Bestellung b ON (k.Kunnr = b.Kunnr) 
  Group By k.Name, l.Liefernr
+
+6.Abfrage
+Select AVG (cast (l.Bestellnr as bigint)) As AVGBestellProLief, l.Unternehmen
+FROM Bestellung b 
+JOIN Lieferdienst l ON(b.Bestellnr = l.Bestellnr)
+Group BY l.Unternehmen 
