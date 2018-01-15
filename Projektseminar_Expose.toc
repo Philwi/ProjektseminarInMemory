@@ -6,4 +6,4 @@
 \contentsline {subsection}{\numberline {3.2}In-Memory Technologie im Vergleich zur konventionellen Datenhaltung}{6}
 \contentsline {subsection}{\numberline {3.3}Kompressionsverfahren}{7}
 \contentsline {subsubsection}{\numberline {3.3.1}Kompressionsverfahren bei SAP HANA}{7}
-\contentsline {section}{\numberline {4}Quellen}{8}
+\contentsline {section}{\numberline {4}Quellen}{11}
