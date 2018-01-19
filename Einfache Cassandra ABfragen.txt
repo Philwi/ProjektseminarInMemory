@@ -6,9 +6,9 @@ MAX
 AVG
 COUNT
 
-Einfachere Abfragen f�r Cassandra / MariaDB(InnoDB)
+Einfachere Abfragen für Cassandra / MariaDB(InnoDB)
 
-
+ÜBERARBEITETE ABFRAGEN GANZ UNTEN!
 
 
 1.)
@@ -64,3 +64,24 @@ SELECT MAX(Fahrzeuganzahl),MAX(Mitarbeiterzahl)
 	FROM lieferdienst
 		WHERE Fahrzeugtyp = 'Auto';
 --####################################--
+
+
+Die oberen Funktionieren teilweise nicht, weil .. ja weil cassandra bissl behindert ist.
+Folgende 4 laufen :
+
+SELECT sum(mitarbeiteranzahl) AS MA_Bundesland
+	FROM beispieldaten.standorte
+WHERE bundesland ='Berlin' allow filtering;
+
+SELECT min(betraggesamt)AS Kleinster_Gesamt_Betrag 
+	FROM beispieldaten.bestellung
+WHERE menge <= 100 allow filtering;
+
+SELECT max(preis),min(preis)
+	FROM beispieldaten.bestellung
+WHERE menge <= 100 allow filtering;
+
+SELECT sum(preis) as preisGesamt,sum(menge) as mengeGesamt 
+	FROM beispieldaten.bestellung
+WHERE menge>=100 allow filtering;
+
