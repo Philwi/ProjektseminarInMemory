@@ -1,0 +1,66 @@
+
+
+SUM
+MIN
+MAX 
+AVG
+COUNT
+
+Einfachere Abfragen für Cassandra / MariaDB(InnoDB)
+
+
+
+
+1.)
+
+Summe aler Mitarbeiter im Bundesland
+----------------------------------------
+SELECT SUM (standorte.mitarbeiteranzahl) AS MA_Bundesland
+	FROM standorte
+		WHERE Bundesland ='Berlin';
+--####################################--
+
+
+
+2.)
+
+Kleinster Gesamtbetrag
+----------------------------------------
+SELECT MIN(betraggesamt)AS Kleinster_Gesamt_Betrag 
+	FROM bestellungen
+		WHERE Menge < 100
+--####################################--
+
+
+
+3.)
+
+Summen bei Eilauftrag
+----------------------------------------
+SELECT SUM(Preis),SUM(Menge) 
+	FROM bestellungen
+		WHERE eilauftrag='1';
+--####################################--
+
+
+
+4.)
+
+Durchschnittspreise bei MwSt 19%
+----------------------------------------
+SELECT AVG(max(preis),min(preis)) 
+	FROM bestellungen
+		WHERE MwSt='19';
+--####################################--		
+
+
+
+
+5.)
+
+Iwas Aggregieren
+----------------------------------------
+SELECT MAX(Fahrzeuganzahl),MAX(Mitarbeiterzahl) 
+	FROM lieferdienst
+		WHERE Fahrzeugtyp = 'Auto';
+--####################################--
