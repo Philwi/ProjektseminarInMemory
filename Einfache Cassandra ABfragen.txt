@@ -37,33 +37,21 @@ SELECT MIN(betraggesamt)AS Kleinster_Gesamt_Betrag
 
 Summen bei Eilauftrag
 ----------------------------------------
-SELECT SUM(Preis),SUM(Menge) 
+SELECT MAX(Preis),MIN(PREIS) 
 	FROM bestellungen
-		WHERE eilauftrag='1';
+		WHERE menge<='100';
 --####################################--
-
-
 
 4.)
 
-Durchschnittspreise bei MwSt 19%
+Vergleich Fahrzeug/Mitarbeiteranz.
 ----------------------------------------
-SELECT AVG(max(preis),min(preis)) 
-	FROM bestellungen
-		WHERE MwSt='19';
---####################################--		
+SELECT max(fahrzeuganzahl),max(mitarbeiteranzahl) 
+	FROM beispieldaten.lieferdienst
+WHERE fahrzeugtyp = 'Auto' ;
 
-
-
-
-5.)
-
-Iwas Aggregieren
-----------------------------------------
-SELECT MAX(Fahrzeuganzahl),MAX(Mitarbeiterzahl) 
-	FROM lieferdienst
-		WHERE Fahrzeugtyp = 'Auto';
 --####################################--
+
 
 
 Die oberen Funktionieren teilweise nicht, weil .. ja weil cassandra bissl behindert ist.
@@ -81,7 +69,11 @@ SELECT max(preis),min(preis)
 	FROM beispieldaten.bestellung
 WHERE menge <= 100 allow filtering;
 
-SELECT sum(preis) as preisGesamt,sum(menge) as mengeGesamt 
-	FROM beispieldaten.bestellung
-WHERE menge>=100 allow filtering;
+
+SELECT max(fahrzeuganzahl),max(mitarbeiteranzahl) 
+	FROM beispieldaten.lieferdienst
+WHERE fahrzeugtyp = 'Auto' allow filtering;
+
+
+
 
