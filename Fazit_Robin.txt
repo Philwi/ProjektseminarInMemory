@@ -1,0 +1,8 @@
+
+Memcache ist ein nützliches Programm, das auch von vielen Web-Unternehmen genutzt wird um eine bessere Performance für den Kunden zu erreichen.
+Da es bereits viele Bibliotheken für fast alle gängigen Programmiersprachen gibt, ist für jeden geschmack etwas dabei.
+Es ist gut dokumentiert und bietet sogar die Freiheit es unter der BSZ-Lizenz den eigenen Ansprüchen anzupassen.
+
+Ich kann nur empfehlen sich dieses kleine Programm mal genauer anzuschauen, vorallem wenn Sie eine Datenbank nutzen und ihren Kunden eine hohe Seiten-Ladezeit Performance bieten wollen.
+Bester Beweis das dies Funktioniert ist Facebook.
+
