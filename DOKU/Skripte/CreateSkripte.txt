@@ -1,0 +1,232 @@
+CREATE KEYSPACE Beispieldaten
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+cqlsh --request-timeout=3600
+
+
+CREATE COLUMNFAMILY Beispieldaten.Kunden (
+				  Kunnr varchar,
+				  Name varchar,
+				  Vorname varchar,
+				  PLZ varchar,
+				  Ort varchar,
+				  Landkz varchar,
+				  Land varchar,
+				  Bundesland varchar,
+				  Region varchar,
+				  Debitornr varchar,
+				  Kreditorennr varchar,
+				  BLZ varchar,
+				  IBAN varchar,
+				  Kreditinstitut varchar,
+				  Beziehungslvl varchar,
+				  Werber varchar,
+				  PRIMARY KEY(Kunnr));
+
+CREATE COLUMNFAMILY Beispieldaten.Bestellung (
+				  Bestellnr varchar,
+				  Datum varchar,
+				  Pos varchar,
+				  Artnr varchar,
+				  Artbez varchar,
+				  Preis varchar,
+				  Mwst varchar,
+				  Menge varchar,
+				  RabatMenge varchar,
+				  BetragGesamt varchar,
+				  RabatKunde varchar,
+				  MwstGesamt varchar,
+				  Kunnr varchar,
+				  Eilauftrag varchar,	
+				  PRIMARY KEY(Bestellnr));
+
+COPY Beispieldaten.Bestellung ( 
+				  Bestellnr,
+				  Datum,
+				  Pos,
+				  Artnr,
+				  Artbez,
+				  Preis,
+				  Mwst,
+				  Menge,
+				  RabatMenge,
+				  BetragGesamt,
+				  RabatKunde,
+				  MwstGesamt,
+				  Kunnr,
+				  Eilauftrag
+) FROM 'Bestellungen.csv' WITH HEADER = FALSE;
+
+CREATE TABLE Beispieldaten.Standorte (
+				  StandortId  varchar,
+				  Liefernr  varchar,
+				  Stadt  varchar,
+				  Landkz  varchar,
+				  Land  varchar,
+				  Bundesland  varchar,
+				  Region  varchar,
+				  Leitername  varchar,
+				  Leitervorname  varchar,
+				  Mitarbeiteranzahl  varchar,
+				  Fuhrparkgroesse  varchar,
+				  Gelaendegroesse  varchar,
+				  PRIMARY KEY (StandortId));
+				  
+copy Beispieldaten.Standorte ( 
+				  StandortId,
+				  Liefernr, 
+				  Stadt, 
+				  Landkz,
+				  Land, 
+				  Bundesland,
+				  Region, 
+				  Leitername, 
+				  Leitervorname, 
+				  Mitarbeiteranzahl,
+				  Fuhrparkgroesse,
+				  Gelaendegroesse
+) FROM 'StandorteUTF.csv' with Header = True;                   !!!!!!UTF BENUTZEN
+
+
+
+copy Beispieldaten.Kunden ( 
+				  Kunnr,
+				  Name,
+				  Vorname,
+				  PLZ,
+				  Ort,
+				  Landkz,
+				  Land,
+				  Bundesland,
+				  Region,
+				  Debitornr,
+				  Kreditorennr,
+				  BLZ,
+				  IBAN,
+				  Kreditinstitut,
+				  Beziehungslvl,
+				  Werber
+) FROM 'KundeUTF.csv' with Header = True;
+
+select sum(Preis) from beispieldaten.bestellung;
+
+CREATE TABLE customers (
+  uid text,
+  fname text,
+  lname text,
+  PRIMARY KEY (uid) 
+) WITH compaction= { 'class': 'MemoryOnlyStrategy' }
+     AND compression = {'sstable_compression' : ''}
+     AND caching = {'keys':'NONE', 'rows_per_partition':'NONE'};
+
+
+SELECT sum(cast(Standorte.Fuhrparkgroesse as bigint)) AS SummeFuhrparkgroesse, Bestellung.Datum
+FROM Bestellung , Standorte
+Where Bestellung.Datum = '08.07.2003'
+GROUP BY Datum;
+
+copy Beispieldaten.Lieferdienst ( 
+				  Bestellnr,
+				  Liefernr, 
+				  Fahrzeugtyp, 
+				  Unternehmen,
+				  DauerDurchschnitt, 
+				  Preis,
+				  Mwst , 
+				  MaxLieferMenge , 
+				  Sitz , 
+				  MitarbeiterAnzahl ,
+				  Abholstationen ,
+				  Lieferstart , 
+				  Fahrzeuganzahl
+) FROM 'LieferdienstUTF.csv' with Header = TRUE;
+
+
+
+select * from beispieldaten.standorte where bundesland = 'Berlin' allow filtering;,
+
+
+CREATE Table Beispieldaten.Gesamt (
+				  Kunnr varchar,
+				  Name varchar,
+				  Vorname varchar,
+				  PLZ varchar,
+				  Ort varchar,
+				  Landkz varchar,
+				  Land varchar,
+				  Bundesland varchar,
+				  Region varchar,
+				  Debitornr varchar,
+				  Kreditorennr varchar,
+				  BLZ varchar,
+				  IBAN varchar,
+				  Kreditinstitut varchar,
+				  Beziehungslvl varchar,
+				  Werber varchar,
+				  Bestellnr varchar,
+				  Datum varchar,
+				  Pos varchar,
+				  Artnr varchar,
+				  Artbez varchar,
+				  Preis varchar,
+				  Mwst varchar,
+				  Menge varchar,
+				  RabatMenge varchar,
+				  BetragGesamt varchar,
+				  RabatKunde varchar,
+				  MwstGesamt varchar,
+				  Eilauftrag varchar,
+				  StandortId  varchar,
+				  Liefernr  varchar,
+				  Stadt  varchar,
+				  Landkz2  varchar,
+				  Land2  varchar,
+				  Bundesland2  varchar,
+				  Region2  varchar,
+				  Leitername  varchar,
+				  Leitervorname  varchar,
+				  Mitarbeiteranzahl  varchar,
+				  Fuhrparkgroesse  varchar,
+				  Gelaendegroesse  varchar,
+				  liefernr
+				  abholstationen
+				  dauerdurchschnitt
+				  fahrzeuganzahl
+				  fahrzeugtyp
+				  lieferstart
+				  maxliefermenge
+				  maxlieferanzahl
+				  mwst
+				  preis
+				  sitz
+				  unternehmen
+
+
+
+CREATE COLUMNFAMILY Beispieldaten.Bestellung (
+				  Bestellnr varchar,
+				  Datum varchar,
+				  Pos varchar,
+				  Artnr varchar,
+				  Artbez varchar,
+				  Preis int,
+				  Mwst varchar,
+				  Menge int,
+				  RabatMenge varchar,
+				  BetragGesamt int,
+				  RabatKunde varchar,
+				  MwstGesamt varchar,
+				  Kunnr varchar,
+				  Eilauftrag int,	
+				  PRIMARY KEY(Bestellnr));
+				  )
+
+create index on beispieldaten.bestellung(betraggesamt);
+create index on beispieldaten.bestellung(preis);
+create index on beispieldaten.bestellung(menge);
+create index on beispieldaten.lieferdienst(fahrzeuganzahl);
+create index on beispieldaten.lieferdienst(mitarbeiteranzahl);
+
+drop index beispieldaten.lieferdienst_fahrzeugtyp_idx;
+
+
