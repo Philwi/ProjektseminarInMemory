@@ -1,0 +1,8 @@
+1. Auswertung Clemens
+2. Hochverfügbarkeit RObert
+3. Spaltenorientiert/Parallele Verarbeitung Moritz
+4. Kompression bei Cassandra noch weiter ausführen (Verfahren sind schon genannt) Marcel
+5. Fazit Robert
+6. Quellen Robert
+7. Bilder einfügen Robert
+8. Systemvergleich Robert
