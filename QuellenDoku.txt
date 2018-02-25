@@ -1,0 +1,6 @@
+https://www.sap.com/germany/developer/topics/sap-hana-express.html
+https://de.wikipedia.org/wiki/SAP_HANA
+https://de.wikipedia.org/wiki/MariaDB
+https://docs.microsoft.com/de-de/sql/relational-databases/data-compression/data-compression
+
+https://tex.stackexchange.com/questions/146948/formatting-the-sql-like-script

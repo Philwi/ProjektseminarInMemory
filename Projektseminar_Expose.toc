@@ -1,9 +1,31 @@
 \select@language {ngerman}
-\contentsline {section}{\numberline {1}Einleitung}{3}
-\contentsline {section}{\numberline {2}Gruppenmitglieder}{3}
-\contentsline {section}{\numberline {3}Theorie}{4}
-\contentsline {subsection}{\numberline {3.1}Grundlagen In-Memory Technologie}{4}
-\contentsline {subsection}{\numberline {3.2}In-Memory Technologie im Vergleich zur konventionellen Datenhaltung}{6}
-\contentsline {subsection}{\numberline {3.3}Kompressionsverfahren}{7}
-\contentsline {subsubsection}{\numberline {3.3.1}Kompressionsverfahren bei SAP HANA}{7}
-\contentsline {section}{\numberline {4}Quellen}{11}
+\contentsline {section}{\numberline {1}Einleitung}{4}
+\contentsline {section}{\numberline {2}Gruppenmitglieder}{4}
+\contentsline {section}{\numberline {3}Aufgabenstellung}{5}
+\contentsline {section}{\numberline {4}Theorie}{6}
+\contentsline {subsection}{\numberline {4.1}Grundlagen In-Memory Technologie}{6}
+\contentsline {subsection}{\numberline {4.2}Verwendete Datenbanksysteme}{8}
+\contentsline {subsubsection}{\numberline {4.2.1}MS SQL Server}{8}
+\contentsline {subsubsection}{\numberline {4.2.2}SAP HANA}{9}
+\contentsline {subsubsection}{\numberline {4.2.3}Cassandra}{9}
+\contentsline {subsubsection}{\numberline {4.2.4}Maria DB in Kombination mit Memcached}{10}
+\contentsline {subsection}{\numberline {4.3}In-Memory Technologie im Vergleich zur konventionellen Datenhaltung}{12}
+\contentsline {subsection}{\numberline {4.4}Kompressionsverfahren}{13}
+\contentsline {subsubsection}{\numberline {4.4.1}Kompressionsverfahren bei SAP HANA}{13}
+\contentsline {subsubsection}{\numberline {4.4.2}Kompressionsverfahren bei MS SQL Server}{17}
+\contentsline {subsubsection}{\numberline {4.4.3}Kompressionsverfahren bei Cassandra}{17}
+\contentsline {subsubsection}{\numberline {4.4.4}Kompressionsverfahren bei Maria DB mit Memcached}{17}
+\contentsline {subsection}{\numberline {4.5}Parallele Verarbeitung}{18}
+\contentsline {subsection}{\numberline {4.6}Hochverf\IeC {\"u}gbarkeit}{19}
+\contentsline {section}{\numberline {5}Installation der Systeme}{20}
+\contentsline {subsection}{\numberline {5.1}Aufsetzen des MS SQL Server}{20}
+\contentsline {subsection}{\numberline {5.2}Aufsetzen der SAP Hana Express}{20}
+\contentsline {subsection}{\numberline {5.3}Aufsetzen von Cassandra}{20}
+\contentsline {subsection}{\numberline {5.4}Aufsetzen von Maria DB in Kombination mit Memcached}{20}
+\contentsline {subsubsection}{\numberline {5.4.1}Installationsvorgang}{20}
+\contentsline {section}{\numberline {6}Anwendungsbeispiel und Vergleichender Performancetest}{26}
+\contentsline {subsection}{\numberline {6.1}Anwendungsbeispiel}{26}
+\contentsline {subsection}{\numberline {6.2}Erzeugung der Datengrundlage}{26}
+\contentsline {subsection}{\numberline {6.3}Einrichten der Datenbank mit den Testdaten}{26}
+\contentsline {subsection}{\numberline {6.4}Performancevergleich}{26}
+\contentsline {section}{\numberline {7}Quellen}{27}
