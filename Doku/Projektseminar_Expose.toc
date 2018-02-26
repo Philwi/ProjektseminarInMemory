@@ -1,0 +1,62 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{4}
+\contentsline {section}{\numberline {2}Gruppenmitglieder}{4}
+\contentsline {section}{\numberline {3}Aufgabenstellung}{6}
+\contentsline {section}{\numberline {4}Theorie}{7}
+\contentsline {subsection}{\numberline {4.1}Grundlagen In-Memory Technologie}{7}
+\contentsline {subsection}{\numberline {4.2}Verwendete Datenbanksysteme}{8}
+\contentsline {subsubsection}{\numberline {4.2.1}MS SQL Server}{8}
+\contentsline {subsubsection}{\numberline {4.2.2}SAP HANA}{9}
+\contentsline {subsubsection}{\numberline {4.2.3}Cassandra}{10}
+\contentsline {subsubsection}{\numberline {4.2.4}Maria DB in Kombination mit Memcached}{10}
+\contentsline {subsection}{\numberline {4.3}In-Memory Technologie im Vergleich zur konventionellen Datenhaltung}{12}
+\contentsline {subsection}{\numberline {4.4}Kompressionsverfahren}{13}
+\contentsline {subsubsection}{\numberline {4.4.1}Kompressionsverfahren bei SAP HANA}{13}
+\contentsline {subsubsection}{\numberline {4.4.2}Kompressionsverfahren bei MS SQL Server}{17}
+\contentsline {subsubsection}{\numberline {4.4.3}Kompressionsverfahren bei Cassandra}{17}
+\contentsline {subsubsection}{\numberline {4.4.4}Kompressionsverfahren bei Maria DB mit Memcached}{18}
+\contentsline {subsection}{\numberline {4.5}Parallele Verarbeitung}{18}
+\contentsline {subsubsection}{\numberline {4.5.1}Parallele Verarbeitung im MS SQL Server}{19}
+\contentsline {subsection}{\numberline {4.6}Hochverf\IeC {\"u}gbarkeit}{19}
+\contentsline {section}{\numberline {5}Anwendungsbeispiel}{21}
+\contentsline {subsection}{\numberline {5.1}Demoszenario}{21}
+\contentsline {subsection}{\numberline {5.2}Datengenerierung}{21}
+\contentsline {subsection}{\numberline {5.3}Datenexport}{22}
+\contentsline {section}{\numberline {6}Installation der Systeme}{24}
+\contentsline {subsection}{\numberline {6.1}Aufsetzen des MS SQL Server}{24}
+\contentsline {subsubsection}{\numberline {6.1.1}Installation des Servers}{24}
+\contentsline {subsubsection}{\numberline {6.1.2}Einrichten der Datenbank}{24}
+\contentsline {subsection}{\numberline {6.2}Aufsetzen der SAP Hana Express}{26}
+\contentsline {subsubsection}{\numberline {6.2.1}Installation}{26}
+\contentsline {subsubsection}{\numberline {6.2.2}Einrichten der Datenbank}{32}
+\contentsline {subsection}{\numberline {6.3}Aufsetzen von Cassandra}{38}
+\contentsline {subsubsection}{\numberline {6.3.1}Vorausgehende Schritte}{38}
+\contentsline {subsubsection}{\numberline {6.3.2}Installation}{39}
+\contentsline {subsubsection}{\numberline {6.3.3}Arbeit mit der Cassandra Datenbank}{44}
+\contentsline {subsection}{\numberline {6.4}Aufsetzen von Maria DB in Kombination mit Memcached}{46}
+\contentsline {subsubsection}{\numberline {6.4.1}Vorausgehende Schritte}{46}
+\contentsline {subsubsection}{\numberline {6.4.2}Installationsvorgang}{47}
+\contentsline {subsubsection}{\numberline {6.4.3}Umsetzung mittels PHP-Engine}{54}
+\contentsline {section}{\numberline {7}Vergleichender Performancetest}{58}
+\contentsline {subsection}{\numberline {7.1}Vergleich insgesamt}{58}
+\contentsline {subsection}{\numberline {7.2}SAP Hana Express im Quantitativen Vergleich zu MSSQL}{59}
+\contentsline {subsection}{\numberline {7.3}Qualitativer Vergleich der DB-Systeme}{63}
+\contentsline {subsubsection}{\numberline {7.3.1}SAP Hana Express:}{63}
+\contentsline {subsubsection}{\numberline {7.3.2}Vorteile}{63}
+\contentsline {subsubsection}{\numberline {7.3.3}Nachteile}{63}
+\contentsline {subsubsection}{\numberline {7.3.4}MSSQL Server 2016:}{63}
+\contentsline {subsubsection}{\numberline {7.3.5}Vorteile:}{63}
+\contentsline {subsubsection}{\numberline {7.3.6}Nachteile:}{64}
+\contentsline {subsubsection}{\numberline {7.3.7}Cassandra}{64}
+\contentsline {subsubsection}{\numberline {7.3.8}Vorteile:}{64}
+\contentsline {subsubsection}{\numberline {7.3.9}Nachteile:}{64}
+\contentsline {subsubsection}{\numberline {7.3.10}Memcache}{64}
+\contentsline {subsubsection}{\numberline {7.3.11}Vorteile}{64}
+\contentsline {subsubsection}{\numberline {7.3.12}Nachteile}{65}
+\contentsline {section}{\numberline {8}Systemvergleich}{66}
+\contentsline {subsection}{\numberline {8.1}SAP Hana Express}{66}
+\contentsline {subsection}{\numberline {8.2}MS SQL Server}{66}
+\contentsline {subsection}{\numberline {8.3}Cassandra}{67}
+\contentsline {subsection}{\numberline {8.4}Maria DB mit Memcache}{67}
+\contentsline {section}{\numberline {9}Fazit}{69}
+\contentsline {section}{\numberline {10}Quellen}{70}
